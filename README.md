@@ -13,7 +13,7 @@ A modern, interactive risk explorer for software supply chain security threats, 
 
 ## 🚀 Live Demo
 
-Visit the live application: [https://harekrishnarai.github.io/software-supply-chain-attack-tree/](https://harekrishnarai.github.io/software-supply-chain-attack-tree/)
+Visit the live application: [http://attack-tree.harekrishnarai.me/](http://attack-tree.harekrishnarai.me/)
 
 ## 🛠️ Technology Stack
 

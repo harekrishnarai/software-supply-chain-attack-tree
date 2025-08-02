@@ -3,14 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://harekrishnarai.github.io/software-supply-chain-attack-tree/",
+  "homepage": "http://attack-tree.harekrishnarai.me/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "deploy:custom": "./deploy.sh"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",
