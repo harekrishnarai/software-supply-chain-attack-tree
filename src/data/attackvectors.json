@@ -1,0 +1,57 @@
+[{
+    "avId": "AV-000",
+    "avName": "Conduct Open-Source Supply Chain Attack",
+    "info": [{
+        "Description": "The attack tree focuses on open-source based software development practices, which involve the consumption of numerous open-source components throughout the entire development lifecycle, spanning from IDE plugins, test frameworks and build tools to runtime dependencies. In this context, the attacker's top-level goal is to place malicious code in open-source artifacts such that it is executed in the context of downstream projects, e.g., during its development or runtime. Such malware can exfiltrate data, represent or open a backdoor, as well as download and execute second-stage payload. Targeted assets can belong both to developers of downstream software projects, or their end-users, depending on the attacker's specific intention. However, the focus of this taxonomy is not on what malicious code does, but how attackers place it in upstream projects. Attackers can target any kind of project (e.g. libraries or word processors), direct or indirect downstream consumers, as many as possible, or very specific ones. The latter is possible by conditioning the execution of malicious code, e.g. on the lifecycle phase (install, test, etc.), application state, operating system, or properties of the downstream component it has been integrated into. Note that infections are not limited to adding malicious executable program code, but can also comprise insecure defaults, the re-introduction of previsously fixed vulnerabilities, the removal of authorization checks, the introduction of new dependencies (on attacker-controlled packages), tests, etc.",
+        "Impact": "Conduct a Software Supply Chain attack",
+        "Mapped Safeguard": [{"sgId": "SG-001"}, {"sgId": "SG-002"}, {"sgId": "SG-003"}, {"sgId": "SG-005"}, {"sgId": "SG-006"}, {"sgId": "SG-010"}, {"sgId": "SG-013"}, {"sgId": "SG-014"}, {"sgId": "SG-023"}, {"sgId": "SG-024"}, {"sgId": "SG-025"}, {"sgId": "SG-026"}, {"sgId": "SG-036"}, {"sgId": "SG-039"}]
+    }]
+}, {
+    "avId": "AV-100",
+    "avName": "Develop and Advertise Distinct Malicious Package from Scratch",
+    "info": [{
+        "Description": "This attack vector covers the creation of a new, seemingly legitimate and useful open-source project with the intention to use it for spreading malicious code, either from the beginning or at a later point in time. Besides creating the project and developing useful functionality, the attacker is required to advertise the project in order to attract victims.",
+        "Impact": "Inject Malicious Code in a component of the software supply chain, hiding the malicious code in a dependency of a seemingly harmless package",
+        "Mapped Safeguard": []
+    }]
+}, {
+    "avId": "AV-200",
+    "avName": "Create Name Confusion with Legitimate Package",
+    "info": [{
+        "Description": "The general idea behind name confusion is that attackers craft new component names that resemble names of legitimate open-source or system components, suggest trustworthy authors or play with common naming patterns in different languages or ecosystems. Malicious components with such names are then deployed on source code or package repositories waiting to be downloaded by victim users or developers. Since the package name does not yet exist in the respective repository, the deployment can be done very easily, without interferring with any legitimate packages, including the one(s) that inspired the new name. Child nodes of this attack vector relate to sub-techniques applying different modifications to the legitimate project name.",
+        "Impact": "Inject Malicious Code in a component of the software supply chain",
+        "Mapped Safeguard": [{"sgId": "SG-007"}, {"sgId": "SG-011"}, {"sgId": "SG-012"}, {"sgId": "SG-038"}]
+    }]
+}, {
+    "avId": "AV-201",
+    "avName": "Combosquatting",
+    "info": [{
+        "Description": "Combosquatting consists of creating a package name containing pre or post-fix additions to the name of a benign package. The attacker can use naming patterns that are common to general development practices (e.g., the addition of \"-dev\" or \"-rc\"), given ecosystems (e.g., the addition of \"3\" to suggest compatibility with Python 3) or indicate platform compatibility (e.g. \"i386\").",
+        "Impact": "Create name confusion, resulting in the installation of a malicious package",
+        "Mapped Safeguard": []
+    }]
+}, {
+    "avId": "AV-202",
+    "avName": "Altering Word Order",
+    "info": [{
+        "Description": "If the name of legitimate packages comprises multiple words, e.g. separated by hyphens or using camel case notation, this technique consists of re-arranging those words in a different order (for example \"test-vision-client\" instead of \"test-client-vision\")",
+        "Impact": "Create name confusion, resulting in the installation of a malicious package",
+        "Mapped Safeguard": []
+    }]
+}, {
+    "avId": "AV-203",
+    "avName": "Manipulating Word Separators",
+    "info": [{
+        "Description": "This technique consists of adding or altering word separators of legitimate packages, e.g. hyphens or underscores (for example \"setup-tools\" instead of \"setuptools\").",
+        "Impact": "Create name confusion, resulting in the installation of a malicious package",
+        "Mapped Safeguard": []
+    }]
+}, {
+    "avId": "AV-204",
+    "avName": "Typosquatting",
+    "info": [{
+        "Description": "Typosquatting is a technique originally known in the context of Website domains, and relies on mistakes such as typographical errors made by users when entering a website address into a web browser. In this context, the attacker exploits that users mistype names of legitimate packages during installation or when declaring dependencies.",
+        "Impact": "Create name confusion, resulting in the installation of a malicious package",
+        "Mapped Safeguard": []
+    }]
+}]
